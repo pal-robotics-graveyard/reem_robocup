@@ -1,0 +1,24 @@
+<package>
+  <description brief="REEM arm navigation configuration and launch files.">
+    The contents of this package are based on the original pr2_arm_navigation stack, and has been following its
+    evolution since the Boxturtle release, hence credit for its contents goes mainly to the authors of the original
+    stack.
+    The authors listed in this stack's packages have mostly adapting the original work to the REEM robot.
+
+    The contents of this stack are based on the original pr2_arm_navigation, and has been following its evolution since
+    the Boxturtle release, hence credit for its contents goes mainly to the authors of the original stack.
+    The authors listed in this stack's packages have mostly adapting the original work to the REEM robot.
+  </description>
+  <author>Adolfo Rodriguez Tsouroukdissian</author>
+  <license>Modified BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/reem_arm_navigation</url>
+  <depend package="planning_environment"/>
+  <depend package="arm_kinematics_constraint_aware"/>
+  <depend package="ompl_ros_interface"/>
+  <depend package="trajectory_filter_server"/>
+  <depend package="constraint_aware_spline_smoother"/>
+  <depend package="move_arm"/>
+  <depend package="robot_self_filter"/>
+  <depend package="collider"/>
+</package>

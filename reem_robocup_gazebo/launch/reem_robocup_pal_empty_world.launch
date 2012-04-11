@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- start up empty world -->
+  <include file="$(find reem_gazebo)/launch/empty_world_real_time.launch"/>
+
+  <!-- start REEM-H2-RoboCup robot with PAL controller-->
+  <include file="$(find reem_robocup_gazebo)/launch/reem_robocup_pal.launch"/>
+
+</launch>
+

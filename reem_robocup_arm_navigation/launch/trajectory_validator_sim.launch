@@ -1,0 +1,7 @@
+<launch>
+  <!-- Basic Reem setup -->
+  <include file="$(find reem_robocup_bringup)/launch/reem.launch" />
+
+  <!-- Regular trajectory validator launch file -->
+  <include file="$(find reem_robocup_arm_navigation)/launch/trajectory_validator.launch" />
+</launch>

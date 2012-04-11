@@ -1,0 +1,22 @@
+<launch>
+  <!-- Upper body -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_upper_body_controllers.yaml" />
+
+  <!-- Arms -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_arm_controllers.yaml" />
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_both_arms_controllers.yaml" />
+
+  <!-- Head -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_head_controller.yaml" />
+
+  <!-- Torso -->
+  <rosparam command="load" file="$(find reem_controller_configuration_gazebo)/config/reem_torso_controller.yaml" />
+
+  <!-- Hands -->
+  <rosparam command="load" file="$(find reem_robocup_controller_configuration_gazebo)/config/hand_controllers.yaml" />
+
+  <!-- Controllers that come up started -->
+  <node name="default_controllers_spawner"
+        pkg="pr2_controller_manager" type="spawner" output="screen"
+        args="--wait-for=calibrated right_arm_torso_controller left_arm_controller head_controller right_hand_controller left_hand_controller" />
+</launch>

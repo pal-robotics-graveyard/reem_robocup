@@ -1,0 +1,3 @@
+<launch>
+  <rosparam command="load" ns="robot_description_planning" file="$(find reem_robocup_arm_navigation)/config/reem_planning_description.yaml" />
+</launch>

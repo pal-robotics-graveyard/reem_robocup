@@ -1,0 +1,4 @@
+<launch>
+    <!-- send REEM-H2-RoboCup urdf to param server -->
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find reem_robocup_description)/robots/reem_robocup.urdf.xacro'" />
+</launch>

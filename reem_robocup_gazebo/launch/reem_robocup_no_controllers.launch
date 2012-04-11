@@ -1,0 +1,13 @@
+<launch>
+
+  <!-- send REEM-H2-RoboCup urdf to param server -->
+  <include file="$(find reem_robocup_description)/robots/upload_reem_robocup.launch" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_reem_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model reem_robocup" respawn="false" output="screen" />
+
+  <!-- default bringup script -->
+  <include file="$(find reem_gazebo)/launch/reem_bringup.launch" />
+
+</launch>
+

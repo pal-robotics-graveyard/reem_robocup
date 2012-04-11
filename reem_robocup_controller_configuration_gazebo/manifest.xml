@@ -1,0 +1,14 @@
+<package>
+  <description brief="reem_robocup_controller_configuration_gazebo">
+
+     reem_robocup_controller_configuration_gazebo
+
+  </description>
+  <author>Joan Oliver</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/reem_robocup_controller_configuration_gazebo</url>
+
+</package>
+
+

@@ -1,0 +1,27 @@
+right_hand_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - hand_right_joint
+  gains:
+    hand_right_joint: {p: 800.0, d: 500.0}
+  joint_trajectory_action_node:
+    joints:
+      - hand_right_joint
+    constraints:
+      goal_time: 0.6
+      hand_right_joint:
+        goal: 0.02
+
+left_hand_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - hand_left_joint
+  gains:
+    hand_left_joint: {p: 800.0, d: 500.0}
+  joint_trajectory_action_node:
+    joints:
+      - hand_left_joint
+    constraints:
+      goal_time: 0.6
+      hand_left_joint:
+        goal: 0.02
