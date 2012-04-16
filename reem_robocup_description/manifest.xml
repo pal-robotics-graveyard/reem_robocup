@@ -9,8 +9,6 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/reem_robocup_description</url>
   <depend package="reem_description"/>
-  <depend package="rh1_description"/>
-
 </package>
 
 

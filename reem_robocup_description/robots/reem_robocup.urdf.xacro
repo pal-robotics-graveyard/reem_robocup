@@ -25,7 +25,7 @@
   <!-- Arm -->
   <include filename="$(find reem_description)/urdf/arm/arm.urdf.xacro" />
   <!-- Hand -->
-  <include filename="$(find rh1_description)/urdf/hand/hand.urdf.xacro" />
+  <include filename="$(find reem_robocup_description)/urdf/hand/hand.urdf.xacro" />
   <!-- Camera sensors -->
   <include filename="$(find reem_description)/urdf/sensors/stereo_camera.urdf.xacro" />
 
