@@ -28,6 +28,8 @@
   <include filename="$(find reem_robocup_description)/urdf/hand/hand.urdf.xacro" />
   <!-- Camera sensors -->
   <include filename="$(find reem_description)/urdf/sensors/stereo_camera.urdf.xacro" />
+  <!-- Kinect -->
+  <include filename="$(find reem_description)/urdf/sensors/kinect.urdf.xacro" />
 
   <!-- Generic simulator_gazebo plugins -->
   <include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" />
@@ -52,6 +54,11 @@
     <!-- The following transformations expresses the pose of the stereo_link (X pointing forward, Z upwards and Y leftwards, contrary to the stereo_optical_link which has Z pointing forward) wrt  head_2_link. -->
     <origin xyz="0.08203  -0.09558  0.04132" rpy="1.56293 -0.00855922 -0.0201307" />
   </xacro:stereo_camera_v0>
+
+  <!-- kinect camera -->
+  <xacro:kinect_v0 parent="head_2_link" name="kinect"> 
+     <origin xyz="0.0 0.0 0.45" rpy="0.0 0.0 0.0" />
+  </xacro:kinect_v0>
 
 </robot>
 
