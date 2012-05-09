@@ -50,7 +50,7 @@
   <xacro:rh1_hand name="hand" side="left"  reflect="-1.0" />
   <!-- stereo camera -->
   <!-- IMPORTANT: focal_length = image_width/(2tan(hfov/2)) -->
-  <xacro:stereo_camera_v0 parent="head_2_link" name="stereo" focal_length="357.95" hfov="85" image_format="bgr8" image_width="656" image_height="492" > 
+  <xacro:stereo_camera_v0 parent="head_2_link" name="stereo" focal_length="357.95" hfov="85" image_format="B8G8R8" image_width="656" image_height="492" > 
     <!-- The following transformations expresses the pose of the stereo_link (X pointing forward, Z upwards and Y leftwards, contrary to the stereo_optical_link which has Z pointing forward) wrt  head_2_link. -->
     <origin xyz="0.08203  -0.09558  0.04132" rpy="1.56293 -0.00855922 -0.0201307" />
   </xacro:stereo_camera_v0>
