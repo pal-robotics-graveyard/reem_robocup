@@ -6,7 +6,6 @@
   <url>http://ros.org/wiki/reem_robocup</url>
   <depend stack="reem_common" /> <!-- reem_description -->
   <depend stack="reem_simulation" /> <!-- reem_gazebo -->
-  <depend stack="rh1_common" /> <!-- rh1_description -->
   <depend stack="ros" />
 
 </stack>
