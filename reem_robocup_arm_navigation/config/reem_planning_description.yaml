@@ -54,7 +54,7 @@ groups:
       - torso_2_joint
       - torso_1_joint
 default_collision_operations:
-  - object1: kinect_link
+  - object1: openni_camera
     object2: head_2_link
     operation: disable  # Manually added
 

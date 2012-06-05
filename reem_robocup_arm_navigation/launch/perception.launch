@@ -1,0 +1,78 @@
+<launch>
+  <!-- send additional description parameters -->
+  <include file="$(find reem_robocup_arm_navigation)/launch/reem_planning_environment.launch" />
+
+  <!-- Collision map refresh node -->
+  <include file="$(find reem_robocup_arm_navigation)/launch/refresh_collision_map.launch" />
+
+  <!-- Crop point cloud volume to one that is relevant for object manipulation -->
+  <group ns="/openni_obstacles">
+    <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen"></node>
+
+    <node pkg="nodelet" type="nodelet" name="obstacles_passthrough_z" args="load pcl/PassThrough /openni_obstacles/pcl_manager" output="screen">
+      <remap from="~input"  to="/openni_obstacles/obstacles" />
+      <rosparam>
+        filter_field_name: 'z'
+        filter_limit_min: 0.1
+        filter_limit_max: 1.5
+        filter_limit_negative: False
+      </rosparam>
+    </node>
+    <node pkg="nodelet" type="nodelet" name="obstacles_passthrough_y" args="load pcl/PassThrough /openni_obstacles/pcl_manager" output="screen">
+      <remap from="~input"  to="/openni_obstacles/obstacles_passthrough_z/output" />
+      <rosparam>
+        filter_field_name: 'y'
+        filter_limit_min: -0.7
+        filter_limit_max:  1.5
+        filter_limit_negative: False
+      </rosparam>
+    </node>
+    <node pkg="nodelet" type="nodelet" name="obstacles_passthrough_x" args="load pcl/PassThrough /openni_obstacles/pcl_manager" output="screen">
+      <remap from="~input"  to="/openni_obstacles/obstacles_passthrough_y/output" />
+      <remap from="~output" to="/openni_obstacles/obstacles_passthrough" />
+      <rosparam>
+        filter_field_name: 'x'
+        filter_limit_min: -1.5
+        filter_limit_max:  1.5
+        filter_limit_negative: False
+      </rosparam>
+    </node>
+  </group>
+
+  <!-- self filter -->
+  <node pkg="robot_self_filter" type="self_filter" respawn="true" name="stereo_self_filter" output="screen">
+     <remap from="cloud_in" to="/openni_obstacles/obstacles_passthrough" />
+     <remap from="cloud_out" to="/openni_obstacles/obstacles_filtered" />
+
+     <param name="subsample_value" type="double" value=".02"/>
+     <rosparam command="load" file="$(find reem_robocup_arm_navigation)/config/self_filter.yaml" />
+  </node>
+
+  <!-- attached_object filter stereo points -->
+  <node pkg="planning_environment" type="filter_attached_objects" name="filter_attached_objects_stereo" output="screen">
+    <remap from="cloud_in" to="/openni_obstacles/obstacles_filtered" />
+    <remap from="cloud_out" to="/openni_obstacles/obstacles_filtered_attached" />
+    <param name="sensor_frame" type="string" value="openni_rgb_optical_frame" />
+  </node>
+
+  <!-- collider -->
+  <node pkg="collider" type="collider_node" name="collider_node" respawn="true" output="screen">
+     <param name="fixed_frame" type="string" value="/base_link" />
+     <param name="resolution" type="double" value="0.025" />
+     <param name="max_range" type="double" value="2.5" />
+     <param name="publish_static_over_dynamic_map" value="true" />
+     <param name="sensor_model_hit" value= "0.8" />
+     <param name="sensor_model_miss" value= "0.31" />
+     <param name="sensor_model_min" value= "0.12" />
+     <param name="sensor_model_max" value= "0.95" />
+
+     <remap from="collision_map_out" to="collision_map_occ" />
+     <remap from="point_cloud_out" to="octomap_point_cloud" />
+
+     <rosparam command="load" file="$(find reem_robocup_arm_navigation)/config/collision_map_sources_openni.yaml"/>
+
+     <!-- self filtering links -->
+     <rosparam command="load" file="$(find reem_robocup_arm_navigation)/config/self_filter.yaml" />
+
+  </node>
+</launch>

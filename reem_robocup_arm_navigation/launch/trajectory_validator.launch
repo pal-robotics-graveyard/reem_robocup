@@ -4,7 +4,7 @@
       <arg name="use_monitor" value="true" />
       <arg name="use_collision_map" value="false" />
   </include>
-  <include file="$(find reem_arm_navigation)/launch/perception.launch"/>
+  <include file="$(find reem_robocup_arm_navigation)/launch/perception.launch"/>
   <include file="$(find reem_arm_navigation)/launch/constraint_aware_kinematics.launch" />
   <include file="$(find reem_arm_navigation)/launch/ompl_planning.launch" />
   <include file="$(find reem_arm_navigation)/launch/trajectory_filter_server.launch" />

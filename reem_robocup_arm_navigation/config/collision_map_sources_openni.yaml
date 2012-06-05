@@ -1,0 +1,9 @@
+cloud_sources:
+#   - name: /openni_obstacles/obstacles_filtered
+#     frame_subsample: 1
+#     point_subsample: 1
+#     sensor_frame: /openni_rgb_optical_frame
+  - name: /extruded_base_laser
+    frame_subsample: 1
+    point_subsample: 1
+    sensor_frame: /base_link

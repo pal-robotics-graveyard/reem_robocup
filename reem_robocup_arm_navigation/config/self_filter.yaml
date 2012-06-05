@@ -1,0 +1,48 @@
+min_sensor_dist: .05
+self_see_default_padding: .01
+self_see_default_scale: 1.0
+self_see_links:
+  - name: base_link
+    padding: 0.02
+  - name: torso_2_link
+    padding: 0.02
+  - name: arm_right_1_link
+    padding: 0.04
+  - name: arm_right_2_link
+    padding: 0.04
+  - name: arm_right_3_link
+    padding: 0.04
+  - name: arm_right_4_link
+    padding: 0.04
+  - name: arm_right_5_link
+    padding: 0.04
+  - name: arm_right_6_link
+    padding: 0.04
+  - name: arm_right_7_link
+    padding: 0.04
+  - name: hand_right_link
+    padding: 0.04
+  - name: hand_right_wrist_link
+    padding: 0.04
+  - name: hand_right_thumb_link
+    padding: 0.04
+  - name: arm_left_1_link
+    padding: 0.04
+  - name: arm_left_2_link
+    padding: 0.04
+  - name: arm_left_3_link
+    padding: 0.04
+  - name: arm_left_4_link
+    padding: 0.04
+  - name: arm_left_5_link
+    padding: 0.04
+  - name: arm_left_6_link
+    padding: 0.04
+  - name: arm_left_7_link
+    padding: 0.04
+  - name: hand_left_link
+    padding: 0.04
+  - name: hand_left_wrist_link
+    padding: 0.04
+  - name: hand_left_thumb_link
+    padding: 0.04

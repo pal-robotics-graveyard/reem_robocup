@@ -21,4 +21,7 @@
   <depend package="move_arm"/>
   <depend package="robot_self_filter"/>
   <depend package="collider"/>
+  <depend package="pcl"/>
+  <depend package="pcl_ros"/>
+  <depend package="std_srvs"/>
 </package>

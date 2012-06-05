@@ -56,7 +56,7 @@
   </xacro:stereo_camera_v0>
 
   <!-- kinect camera -->
-  <xacro:kinect_v0 parent="head_2_link" name="kinect"> 
+  <xacro:kinect_v0 parent="head_2_link" name="openni"> 
      <origin xyz="0.0 0.0 0.45" rpy="0.0 0.0 0.0" />
   </xacro:kinect_v0>
 
