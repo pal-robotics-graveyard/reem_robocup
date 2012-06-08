@@ -54,6 +54,34 @@ groups:
       - torso_2_joint
       - torso_1_joint
 default_collision_operations:
+  - object1: base_bumper_01_link
+    object2: base_link
+    operation: disable  # Manually added
+  - object1: base_bumper_02_link
+    object2: base_link
+    operation: disable  # Manually added
+  - object1: base_bumper_03_link
+    object2: base_link
+    operation: disable  # Manually added
+  - object1: base_bumper_04_link
+    object2: base_link
+    operation: disable  # Manually added
+  - object1: base_bumper_05_link
+    object2: base_link
+    operation: disable  # Manually added
+  - object1: base_bumper_06_link
+    object2: base_link
+    operation: disable  # Manually added
+  - object1: base_bumper_07_link
+    object2: base_link
+    operation: disable  # Manually added
+  - object1: base_bumper_07_link
+    object2: wheel_right_link
+    operation: disable  # Manually added
+  - object1: base_bumper_03_link
+    object2: wheel_left_link
+    operation: disable  # Manually added
+
   - object1: openni_camera
     object2: head_2_link
     operation: disable  # Manually added
